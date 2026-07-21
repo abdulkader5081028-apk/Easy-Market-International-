@@ -1,0 +1,6 @@
+{
+  "appId": "com.ceobusiness.alibaba",
+  "appName": "Easymarket CEO Marketplace",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
