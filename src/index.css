@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   EASY-MARKET INTERNATIONAL GLOBAL THEME STYLE
+   ========================================================================== */
+
+@layer base {
+  body {
+    @apply bg-[#F7F8FA] text-gray-900 antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* গ্লোবাল ইনপুট ও টেক্সট-এরিয়া ফোকাস স্টাইল */
+  input, textarea, select {
+    @apply transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#FF6600]/20 focus:border-[#FF6600];
+  }
+}
+
+@layer components {
+  /* ইজি-মার্কেট প্রাইমারি বাটন (Easy-Market Premium Button) */
+  .btn-easy-primary {
+    @apply bg-gradient-to-r from-[#FF6600] to-[#FF4500] text-white font-bold px-6 py-2.5 rounded-full 
+           transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20 
+           active:scale-95 transform flex items-center justify-center gap-2;
+  }
+
+  /* সেকেন্ডারি কন্টাক্ট বাটন (Supplier Inquiry Button) */
+  .btn-easy-secondary {
+    @apply border border-[#FF6600] text-[#FF6600] font-bold px-4 py-2 rounded-xl
+           transition-all duration-200 hover:bg-[#FF6600] hover:text-white 
+           active:scale-98 flex items-center justify-center gap-1;
+  }
+
+  /* প্রিমিয়াম হোলসেল প্রোডাক্ট কার্ড (Premium B2B Product Card) */
+  .easy-product-card {
+    @apply bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm
+           transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5;
+  }
+
+  /* সিইও ড্যাশবোর্ড কাস্টম কার্ড (CEO Dashboard Widgets) */
+  .ceo-stat-card {
+    @apply bg-white/5 backdrop-blur-md p-5 rounded-2xl border border-white/10 
+           transition-all duration-300 hover:bg-white/10 hover:border-white/20;
+  }
+}
+
+/* ==========================================================================
+   MOBILE APP OPTIMIZATION & CUSTOM LOOKS
+   ========================================================================== */
+
+/* মোবাইল অ্যাপে বা ব্রাউজারে সাইড স্ক্রোলবারকে প্রিমিয়াম ও চিকন করার জন্য */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F8FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E5E7EB;
+  border-radius: 20px;
+  border: 2px solid #F7F8FA;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6600;
+}
+
+/* মোবাইল অ্যাপে ক্লিক করার সময় যে ডিফল্ট নীল বা ধূসর শ্যাডো পড়ে তা রিমুভ করার জন্য */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ইমেজ লোড হওয়ার সময় বা ইমেজ মিসিং থাকলে সুন্দর একটি ব্যাকগ্রাউন্ড দেওয়ার জন্য */
+img {
+  text-indent: -10000px;
+  @apply bg-gray-100 object-cover;
+}
+
+/* টেক্সট লং হলে যাতে সুন্দরভাবে ৩ ডট (...) দিয়ে কেটে যায় (Line Clamp Backup) */
+.text-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
